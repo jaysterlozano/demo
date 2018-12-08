@@ -177,7 +177,7 @@ class Platform(Sprite):
         Sprite.__init__(self, self.groups)
         self.game = game
         images = [self.game.spritesheet.get_image(0, 288, 380, 94), 
-                  self.game.spritesheet.get_image(213, 1662, 201, 100)]
+                  self.game.spritesheet.get_image(213, 1764, 201, 100)]
         self.image = random.choice(images)
         self.image.set_colorkey(BLACK)
         '''leftovers from random rectangles before images'''
@@ -198,7 +198,7 @@ class Pow(Sprite):
         self.game = game
         self.plat = plat
         self.type = random.choice(['boost'])
-        self.image = self.game.spritesheet.get_image(820, 1805, 71, 70)
+        self.image = self.game.spritesheet.get_image(0, 1988, 145, 57)
         self.image.set_colorkey(BLACK)
         self.rect = self.image.get_rect()
         self.rect.centerx = self.plat.rect.centerx
@@ -223,16 +223,17 @@ class Mob(Sprite):
         self.image = self.image_up
         self.image.set_colorkey(BLACK)
         self.rect = self.image.get_rect()
-        self.rect.centerx = choice([-100, WIDTH + 100])
+        self.rect.centerx = randrange(0, WIDTH)
         self.rect_top = self.rect.top
         self.vx = randrange(1, 4)
         if self.rect.centerx > WIDTH:
             self.vx *= -1
         self.rect.y = randrange(HEIGHT//1.5)
-        self.vy = 0
-        self.dy = 0.5
+        self.vy = 1
+        self.dy = 1
     def update(self):
-        self.rect.x += self.vx
+        # self.x = randrange(0, WIDTH)
+        self.rect.y += self.vy
         self.vy += self.dy
         self.rect_top = self.rect.top
         if self.vy > 3 or  self.vy < -3:

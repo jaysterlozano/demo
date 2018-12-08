@@ -11,13 +11,17 @@ Have only powerups on the platform
 
 
 **********Bugs
-Still working on it 
+Figuring out how to eliminate automatically getting on platform when you touch the bottom of the platform
+
 
 **********Gameplay fixes
-None yet, still working on it 
+Not getting stuck on platform, more enemies and powerups give the character more chances on a boost instead
+of waiting on a platform for a long time 
 
 **********Features
 Starting to add powerups and change the direction the enemies are going 
+Changed the platforms, and character, have the enemies falling horizontally
+Starting to work on the background and sound next 
 
 
 '''
@@ -288,4 +292,4 @@ while g.running:
     try:
         g.show_go_screen()
     except:
-        print("can't load go screen...")
+        print("can't load go screen...")         
